@@ -12,19 +12,18 @@
 
 
       <label for = "title[name]">Title Name</label>
+      <input type = "text" id="title[name]" name="new_title">
 
-      <input type = "text" id = "title[name]">
+      <p><label for = "landmark[name]">Create New Landmark</label></p>
 
-      <label for = "landmark[name]">Create New Landmark</label>
-
-      <input type = "text" id = "landmark[name]">
+      <input type = "text" id = "landmark[name]" name = "new_landmark">
        Select Landmark: <br>
        <%Landmark.all.each do |landmark|%>
-        <input type="checkbox"  id="landmark_<%=landmark.id%>" name="figure[landmark_ids][]" value="<%=landmark.id%>"><%=landmark.name%></input>
+        <input type="checkbox"  id="landmark_<%= landmark.id %>" name="figure[landmark_ids][]" value="<%=landmark.id%>"><%=landmark.name%></input>
        <%end%>
-       Select Title<br>
+       Select Title:<br>
        <% Title.all.each do |title| %>
- 		     <li><input type="checkbox" id="title_<%= title.id%>" name="figure[title_ids][]" value="<%= title.id %>"><%= title.name %></input></li>
+ 		     <li><input type="checkbox" id="title_<%= title.id %>" name="figure[title_ids][]" value="<%= title.id %>"><%= title.name %></input></li>
  	     <% end %>
 
       <input type = "submit" value = "Create New Figure">

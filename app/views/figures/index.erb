@@ -7,7 +7,7 @@
   <body>
       <h2>Figures</h2>
       <ul>
-        <%Figure.all.each do |figure|%>
+        <% @figures.each do |figure| %>
           <li>  <%=figure.name%> </li>
         <%end%>
       </ul>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Show Figure</title>
+  </head>
+  <body>
+       <h1><%=@this_figure.name%></h1>
+       <%if !@this_figure.landmarks.empty?%>
+            <ul>
+           <%@this_figure.landmarks.all.each do |t|%>
+           <li><%=t.name%></li>
+           <%end%>
+         </ul>
+       <%end%>
+       <%if !@this_figure.titles.empty?%>
+            <ul>
+           <%@this_figure.titles.all.each do |t|%>
+           <li><%=t.name%></li>
+           <%end%>
+         </ul>
+       <%end%>
+  </body>
+</html>
